@@ -12,8 +12,7 @@ void main(void)
             LCD_DisplayOn_S1Num();
             LCD_DisplayOn_S2Num();
             LCD_DisplayOn_S3Num();
-            BATTON; MINUSON; ACON; DHON; RHON; BC4ON; DP4ON; DP3ON;
-            DP2ON; MILLION; MEGAON; AMPSON; VOLTON; KILOON; OHMSON; RCON;
+            LCD_DisplayOn_SupportingChars();
             IO_RD1_Toggle(); // FYI-looks like the rest of the leds in use-LCD
         }
     }
