@@ -249,6 +249,19 @@ void LCD_S3Num (unsigned char num)
         default: S3AOFF; S3BOFF; S3COFF; S3DOFF; S3EOFF; S3FOFF; S3GOFF;
     }    
 }
+
+void LCD_DisplayOn_SupportingChars(void)
+{
+    BATTON; MINUSON; ACON; DHON; RHON; BC4ON; DP4ON; DP3ON; S1ON; S2ON;
+    DP2ON; MILLION; MEGAON; AMPSON; VOLTON; KILOON; OHMSON; RCON; 
+}
+
+void LCD_DisplayOFF_SupportingChars(void)
+{
+    BATTOFF; MINUSOFF; ACOFF; DHOFF; RHOFF; BC4OFF; DP4OFF; DP3OFF; S1OFF; S2OFF;
+    DP2OFF; MILLIOFF; MEGAOFF; AMPSOFF; VOLTOFF; KILOOFF; OHMSOFF; RCOFF; 
+}
+
 // end of file
      
         
