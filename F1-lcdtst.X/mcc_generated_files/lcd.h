@@ -106,10 +106,10 @@
 #define S3E      LCDDATA6bits.SEG2COM2
 #define S3F      LCDDATA3bits.SEG2COM1
 #define S3G      LCDDATA3bits.SEG4COM1
-#define X00      LCDDATA0bits.SEG0COM0
-#define X01      LCDDATA3bits.SEG0COM1
-#define X02      LCDDATA6bits.SEG0COM2
-#define X03      LCDDATA9bits.SEG0COM3
+#define RC       LCDDATA0bits.SEG0COM0
+#define BATT     LCDDATA3bits.SEG0COM1
+#define MINUS      LCDDATA6bits.SEG0COM2
+#define AC      LCDDATA9bits.SEG0COM3
 #define X04      LCDDATA0bits.SEG1COM0
 #define X05      LCDDATA3bits.SEG1COM1
 #define X06      LCDDATA6bits.SEG1COM2
@@ -146,10 +146,10 @@
 #define S3EON    S3E = 1
 #define S3FON    S3F = 1
 #define S3GON    S3G = 1
-#define X00ON    X00 = 1
-#define X01ON    X01 = 1
-#define X02ON    X02 = 1
-#define X03ON    X03 = 1
+#define RCON     RC = 1
+#define BATTON    BATT = 1
+#define MINUSON    MINUS = 1
+#define ACON    AC = 1
 #define X04ON    X04 = 1
 #define X05ON    X05 = 1
 #define X06ON    X06 = 1
@@ -186,10 +186,10 @@
 #define S3EOFF    S3E = 0
 #define S3FOFF    S3F = 0
 #define S3GOFF    S3G = 0
-#define X00OFF    X00 = 0
-#define X01OFF    X01 = 0
-#define X02OFF    X02 = 0
-#define X03OFF    X03 = 0
+#define RCOFF    RC = 0
+#define BATTOFF    BATT = 0
+#define MINUSOFF    MINUS = 0
+#define ACOFF    AC = 0
 #define X04OFF    X04 = 0
 #define X05OFF    X05 = 0
 #define X06OFF    X06 = 0
