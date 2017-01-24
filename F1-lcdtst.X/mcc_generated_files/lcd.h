@@ -108,20 +108,23 @@
 #define S3G      LCDDATA3bits.SEG4COM1
 #define RC       LCDDATA0bits.SEG0COM0
 #define BATT     LCDDATA3bits.SEG0COM1
-#define MINUS      LCDDATA6bits.SEG0COM2
-#define AC      LCDDATA9bits.SEG0COM3
-#define X04      LCDDATA0bits.SEG1COM0
-#define X05      LCDDATA3bits.SEG1COM1
-#define X06      LCDDATA6bits.SEG1COM2
-#define X07      LCDDATA9bits.SEG1COM3
-#define X08      LCDDATA9bits.SEG4COM3
-#define X09      LCDDATA10bits.SEG10COM3
-#define X10      LCDDATA8bits.SEG17COM2
-#define X11      LCDDATA11bits.SEG17COM3
-#define X12      LCDDATA2bits.SEG20COM0
-#define X13      LCDDATA5bits.SEG20COM1
-#define X14      LCDDATA8bits.SEG20COM2
-#define X15      LCDDATA11bits.SEG20COM3
+#define MINUS    LCDDATA6bits.SEG0COM2
+#define AC       LCDDATA9bits.SEG0COM3
+#define DH       LCDDATA0bits.SEG1COM0
+#define RH       LCDDATA3bits.SEG1COM1
+#define BC4      LCDDATA6bits.SEG1COM2
+#define DP4      LCDDATA9bits.SEG1COM3
+#define DP3      LCDDATA9bits.SEG4COM3
+#define DP2      LCDDATA10bits.SEG10COM3
+#define MILLI    LCDDATA8bits.SEG17COM2
+#define MEGA     LCDDATA11bits.SEG17COM3
+#define AMPS     LCDDATA2bits.SEG20COM0
+#define VOLT     LCDDATA5bits.SEG20COM1
+#define KILO     LCDDATA8bits.SEG20COM2
+#define OHMS     LCDDATA11bits.SEG20COM3
+#define S1       LCDDATA2bits.SEG17COM0
+#define S2       LCDDATA5bits.SEG17COM1
+
 /**
     Defines: To Turn on a pixel (a segment from a digit or a special character)
 */
@@ -147,21 +150,24 @@
 #define S3FON    S3F = 1
 #define S3GON    S3G = 1
 #define RCON     RC = 1
-#define BATTON    BATT = 1
-#define MINUSON    MINUS = 1
-#define ACON    AC = 1
-#define X04ON    X04 = 1
-#define X05ON    X05 = 1
-#define X06ON    X06 = 1
-#define X07ON    X07 = 1
-#define X08ON    X08 = 1
-#define X09ON    X09 = 1
-#define X10ON    X10 = 1
-#define X11ON    X11 = 1
-#define X12ON    X12 = 1
-#define X13ON    X13 = 1
-#define X14ON    X14 = 1
-#define X15ON    X15 = 1
+#define BATTON   BATT = 1
+#define MINUSON  MINUS = 1
+#define ACON     AC = 1
+#define DHON     DH = 1
+#define RHON     RH = 1
+#define BC4ON    BC4 = 1
+#define DP4ON    DP4 = 1
+#define DP3ON    DP3 = 1
+#define DP2ON    DP2 = 1
+#define MILLION  MILLI = 1
+#define MEGAON   MEGA = 1
+#define AMPSON   AMPS = 1
+#define VOLTON   VOLT = 1
+#define KILOON   KILO = 1
+#define OHMSON   OHMS = 1
+#define S1ON     S1 = 1
+#define S2ON     S2 = 1
+
 /**
     Defines: To Turn off a pixel (a segment from a digit or a special character)
 */
@@ -186,22 +192,24 @@
 #define S3EOFF    S3E = 0
 #define S3FOFF    S3F = 0
 #define S3GOFF    S3G = 0
-#define RCOFF    RC = 0
-#define BATTOFF    BATT = 0
-#define MINUSOFF    MINUS = 0
-#define ACOFF    AC = 0
-#define X04OFF    X04 = 0
-#define X05OFF    X05 = 0
-#define X06OFF    X06 = 0
-#define X07OFF    X07 = 0
-#define X08OFF    X08 = 0
-#define X09OFF    X09 = 0
-#define X10OFF    X10 = 0
-#define X11OFF    X11 = 0
-#define X12OFF    X12 = 0
-#define X13OFF    X13 = 0
-#define X14OFF    X14 = 0
-#define X15OFF    X15 = 0
+#define RCOFF     RC = 0
+#define BATTOFF   BATT = 0
+#define MINUSOFF  MINUS = 0
+#define ACOFF     AC = 0
+#define DHOFF     DH = 0
+#define RHOFF     RH = 0
+#define BC4OFF    BC4 = 0
+#define DP4OFF    DP4 = 0
+#define DP3OFF    DP3 = 0
+#define DP2OFF    DP2 = 0
+#define MILLIOFF  MILLI = 0
+#define MEGAOFF   MEGA = 0
+#define AMPSOFF   AMPS = 0
+#define VOLTOFF   VOLT = 0
+#define KILOOFF   KILO = 0
+#define OHMSOFF   OHMS = 0
+#define S1OFF     S1 = 0
+#define S2OFF     S2 = 0
 
 /**
   Section: Interface Routines
@@ -666,4 +674,28 @@ void LCD_DisplayOff_S3Num();
         </code>      
 */
 void LCD_S3Num (unsigned char num);
+
+/**
+  @Summary
+    Displays on all the defined pixels for support characters 
+    (like the battery symbol)
+
+  @Description
+    This routine displays on all the defined pixels for for support 
+    characters (like the battery symbol)
+
+  @Returns
+    None
+
+  @Param
+    None
+  
+  @Example
+        <code>
+        void LCD_DisplayOn_SupportingChars();
+        </code>
+*/
+void LCD_DisplayOn_SupportingChars(void);
+void LCD_DisplayOFF_SupportingChars(void);
+
 #endif /*_LCD_H*/
