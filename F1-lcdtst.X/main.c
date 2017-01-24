@@ -12,9 +12,9 @@ void main(void)
             LCD_DisplayOn_S1Num();
             LCD_DisplayOn_S2Num();
             LCD_DisplayOn_S3Num();
-            BATTON; MINUSON; ACON; X04ON; X05ON; X06ON; X07ON; X08ON;
-            X09ON; X10ON; X11ON; X12ON; X13ON; X14ON; X15ON; RCON;
-            IO_RD1_Toggle();
+            BATTON; MINUSON; ACON; DHON; RHON; BC4ON; DP4ON; DP3ON;
+            DP2ON; MILLION; MEGAON; AMPSON; VOLTON; KILOON; OHMSON; RCON;
+            IO_RD1_Toggle(); // FYI-looks like the rest of the leds in use-LCD
         }
     }
 }
