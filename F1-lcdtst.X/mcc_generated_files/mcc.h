@@ -95,6 +95,34 @@ void OSCILLATOR_Initialize(void);
  */
 void WDT_Initialize(void);
 
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Cycles through all LCD segments. Turns them on then off. Also turns on LED
+    RD1. The rest of the LED pins appear to be connected to an LCD pin
+ * @Example
+    ScreenTest();
+ */
+
+void ScreenTest(void);
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Function will get called when TMR6 has overflowed 31 times, making approx
+    1 second period. In this function we decide which characters get displayed
+    and go ahead and write them to the LCD when writing is allowed
+ * @Example
+    Tmr6_CallBack_writer();
+ */
+
+void Tmr6_CallBack_writer(void);
 
 #endif	/* MCC_H */
 /**
