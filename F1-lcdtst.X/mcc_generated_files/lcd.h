@@ -85,6 +85,18 @@
 #define SEG17      LCDSE2bits.SE17
 #define SEG18      LCDSE2bits.SE18
 
+/*
+ AAAAAA
+F      B
+F      B
+F      B
+ GGGGGG
+E      C
+E      C
+E      C
+ DDDDDD  DP
+*/
+
 #define S1A      LCDDATA1bits.SEG12COM0
 #define S1B      LCDDATA2bits.SEG16COM0
 #define S1C      LCDDATA8bits.SEG16COM2
