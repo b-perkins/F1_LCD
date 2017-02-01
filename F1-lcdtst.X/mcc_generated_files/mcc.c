@@ -73,6 +73,7 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     WDT_Initialize();
     LCD_Initialize();
+    TMR6_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
@@ -84,9 +85,7 @@ void OSCILLATOR_Initialize(void)
     // Set the secondary oscillator
 
     // Wait for PLL to stabilize
-    while(PLLR == 0)
-    {
-}
+    while(PLLR == 0);
 }
 
 void WDT_Initialize(void)

@@ -49,6 +49,8 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "interrupt_manager.h"
+#include "tmr6.h"
 #include "lcd.h"
 
 #define _XTAL_FREQ  32000000
@@ -93,7 +95,6 @@ void OSCILLATOR_Initialize(void);
  */
 void WDT_Initialize(void);
 
-void writeStuff(void);
 
 #endif	/* MCC_H */
 /**
