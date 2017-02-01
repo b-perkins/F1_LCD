@@ -73,6 +73,7 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     WDT_Initialize();
     LCD_Initialize();
+    ScreenTest();
     TMR6_Initialize();
 }
 
@@ -92,6 +93,27 @@ void WDT_Initialize(void)
 {
     // WDTPS 1:65536; SWDTEN OFF; 
     WDTCON = 0x16;
+}
+
+void ScreenTest(void)
+{
+    while (!LCD_IsWritingAllowed());
+    
+    // turn on all segments
+    LCD_DisplayOn_S1Num();
+    LCD_DisplayOn_S2Num();
+    LCD_DisplayOn_S3Num();
+    LCD_DisplayOn_SupportingChars();
+    IO_RD1_Toggle();
+    
+    __delay_ms(1000);
+    
+    // turn off all segments
+    IO_RD1_Toggle(); 
+    LCD_DisplayOFF_SupportingChars();
+    LCD_DisplayOff_S3Num();
+    LCD_DisplayOff_S2Num();
+    LCD_DisplayOff_S1Num();
 }
 
 /**
