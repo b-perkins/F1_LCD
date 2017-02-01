@@ -179,18 +179,24 @@ void LCD_S1Num (unsigned char num)
 {
     switch (num)
     {
-        case 0: S1AON;   S1BON;   S1CON;   S1DON;   S1EON;   S1FON;   S1GOFF;  break;
-        case 1: S1AOFF;  S1BON;   S1CON;   S1DOFF;  S1EOFF;  S1FOFF;  S1GOFF;  break;
-        case 2: S1AON;   S1BON;   S1COFF;  S1DON;   S1EON;   S1FOFF;  S1GON;   break;
-        case 3: S1AON;   S1BON;   S1CON;   S1DON;   S1EOFF;  S1FOFF;  S1GON;   break;
-        case 4: S1AOFF;  S1BON;   S1CON;   S1DOFF;  S1EOFF;  S1FON;   S1GON;   break;
-        case 5: S1AON;   S1BOFF;  S1CON;   S1DON;   S1EOFF;  S1FON;   S1GON;   break;
-        case 6: S1AON;   S1BOFF;  S1CON;   S1DON;   S1EON;   S1FON;   S1GON;   break;
-        case 7: S1AON;   S1BON;   S1CON;   S1DOFF;  S1EOFF;  S1FOFF;  S1GOFF;  break;
-        case 8: S1AON;   S1BON;   S1CON;   S1DON;   S1EON;   S1FON;   S1GON;   break;
-        case 9: S1AON;   S1BON;   S1CON;   S1DON;   S1EOFF;  S1FON;   S1GON;   break;
+        case 0x00: S1AON;   S1BON;   S1CON;   S1DON;   S1EON;   S1FON;   S1GOFF;  DP2OFF; break;
+        case 0x01: S1AOFF;  S1BON;   S1CON;   S1DOFF;  S1EOFF;  S1FOFF;  S1GOFF;  DP2OFF; break;
+        case 0x02: S1AON;   S1BON;   S1COFF;  S1DON;   S1EON;   S1FOFF;  S1GON;   DP2OFF; break;
+        case 0x03: S1AON;   S1BON;   S1CON;   S1DON;   S1EOFF;  S1FOFF;  S1GON;   DP2OFF; break;
+        case 0x04: S1AOFF;  S1BON;   S1CON;   S1DOFF;  S1EOFF;  S1FON;   S1GON;   DP2OFF; break;
+        case 0x05: S1AON;   S1BOFF;  S1CON;   S1DON;   S1EOFF;  S1FON;   S1GON;   DP2OFF; break;
+        case 0x06: S1AON;   S1BOFF;  S1CON;   S1DON;   S1EON;   S1FON;   S1GON;   DP2OFF; break;
+        case 0x07: S1AON;   S1BON;   S1CON;   S1DOFF;  S1EOFF;  S1FOFF;  S1GOFF;  DP2OFF; break;
+        case 0x08: S1AON;   S1BON;   S1CON;   S1DON;   S1EON;   S1FON;   S1GON;   DP2OFF; break;
+        case 0x09: S1AON;   S1BON;   S1CON;   S1DON;   S1EOFF;  S1FON;   S1GON;   DP2OFF; break;
+        case 0x0A: S1AON;   S1BON;   S1CON;   S1DOFF;  S1EON;   S1FON;   S1GON;   DP2ON; break;
+        case 0x0B: S1AON;   S1BON;   S1CON;   S1DON;   S1EON;   S1FON;   S1GON;   DP2ON; break;
+        case 0x0C: S1AON;   S1BOFF;  S1COFF;  S1DON;   S1EON;   S1FON;   S1GOFF;  DP2ON; break;
+        case 0x0D: S1AON;   S1BON;   S1CON;   S1DON;   S1EON;   S1FON;   S1GOFF;  DP2ON; break;
+        case 0x0E: S1AON;   S1BOFF;  S1COFF;  S1DON;   S1EON;   S1FON;   S1GON;   DP2ON; break;
+        case 0x0F: S1AON;   S1BOFF;  S1COFF;  S1DOFF;  S1EON;   S1FON;   S1GON;   DP2ON; break;
 
-        default: S1AOFF; S1BOFF; S1COFF; S1DOFF; S1EOFF; S1FOFF; S1GOFF;
+        default: S1AOFF; S1BOFF; S1COFF; S1DOFF; S1EOFF; S1FOFF; S1GOFF; DP2OFF;
     }    
 }
 void LCD_DisplayOn_S2Num() 
@@ -207,18 +213,24 @@ void LCD_S2Num (unsigned char num)
 {
     switch (num)
     {
-        case 0: S2AON;   S2BON;   S2CON;   S2DON;   S2EON;   S2FON;   S2GOFF;  break;
-        case 1: S2AOFF;  S2BON;   S2CON;   S2DOFF;  S2EOFF;  S2FOFF;  S2GOFF;  break;
-        case 2: S2AON;   S2BON;   S2COFF;  S2DON;   S2EON;   S2FOFF;  S2GON;   break;
-        case 3: S2AON;   S2BON;   S2CON;   S2DON;   S2EOFF;  S2FOFF;  S2GON;   break;
-        case 4: S2AOFF;  S2BON;   S2CON;   S2DOFF;  S2EOFF;  S2FON;   S2GON;   break;
-        case 5: S2AON;   S2BOFF;  S2CON;   S2DON;   S2EOFF;  S2FON;   S2GON;   break;
-        case 6: S2AON;   S2BOFF;  S2CON;   S2DON;   S2EON;   S2FON;   S2GON;   break;
-        case 7: S2AON;   S2BON;   S2CON;   S2DOFF;  S2EOFF;  S2FOFF;  S2GOFF;  break;
-        case 8: S2AON;   S2BON;   S2CON;   S2DON;   S2EON;   S2FON;   S2GON;   break;
-        case 9: S2AON;   S2BON;   S2CON;   S2DON;   S2EOFF;  S2FON;   S2GON;   break;
+        case 0x00: S2AON;   S2BON;   S2CON;   S2DON;   S2EON;   S2FON;   S2GOFF;  DP3OFF; break;
+        case 0x01: S2AOFF;  S2BON;   S2CON;   S2DOFF;  S2EOFF;  S2FOFF;  S2GOFF;  DP3OFF; break;
+        case 0x02: S2AON;   S2BON;   S2COFF;  S2DON;   S2EON;   S2FOFF;  S2GON;   DP3OFF; break;
+        case 0x03: S2AON;   S2BON;   S2CON;   S2DON;   S2EOFF;  S2FOFF;  S2GON;   DP3OFF; break;
+        case 0x04: S2AOFF;  S2BON;   S2CON;   S2DOFF;  S2EOFF;  S2FON;   S2GON;   DP3OFF; break;
+        case 0x05: S2AON;   S2BOFF;  S2CON;   S2DON;   S2EOFF;  S2FON;   S2GON;   DP3OFF; break;
+        case 0x06: S2AON;   S2BOFF;  S2CON;   S2DON;   S2EON;   S2FON;   S2GON;   DP3OFF; break;
+        case 0x07: S2AON;   S2BON;   S2CON;   S2DOFF;  S2EOFF;  S2FOFF;  S2GOFF;  DP3OFF; break;
+        case 0x08: S2AON;   S2BON;   S2CON;   S2DON;   S2EON;   S2FON;   S2GON;   DP3OFF; break;
+        case 0x09: S2AON;   S2BON;   S2CON;   S2DON;   S2EOFF;  S2FON;   S2GON;   DP3OFF; break;
+        case 0x0A: S2AON;   S2BON;   S2CON;   S2DOFF;  S2EON;   S2FON;   S2GON;   DP3ON; break;
+        case 0x0B: S2AON;   S2BON;   S2CON;   S2DON;   S2EON;   S2FON;   S2GON;   DP3ON; break;
+        case 0x0C: S2AON;   S2BOFF;  S2COFF;  S2DON;   S2EON;   S2FON;   S2GOFF;  DP3ON; break;
+        case 0x0D: S2AON;   S2BON;   S2CON;   S2DON;   S2EON;   S2FON;   S2GOFF;  DP3ON; break;
+        case 0x0E: S2AON;   S2BOFF;  S2COFF;  S2DON;   S2EON;   S2FON;   S2GON;   DP3ON; break;
+        case 0x0F: S2AON;   S2BOFF;  S2COFF;  S2DOFF;  S2EON;   S2FON;   S2GON;   DP3ON; break;
 
-        default: S2AOFF; S2BOFF; S2COFF; S2DOFF; S2EOFF; S2FOFF; S2GOFF;
+        default: S2AOFF; S2BOFF; S2COFF; S2DOFF; S2EOFF; S2FOFF; S2GOFF; DP3OFF;
     }    
 }
 void LCD_DisplayOn_S3Num() 
