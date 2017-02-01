@@ -1,11 +1,9 @@
 #include "mcc_generated_files/mcc.h"
-
-void ScreenTest(void);
+uint8_t whichNum, digitPos = 0x00;
 
 void main(void)
 {
     SYSTEM_Initialize();
-    ScreenTest();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
 
@@ -15,19 +13,36 @@ void main(void)
     }
 }
 
-void ScreenTest(void)
+// We will show up here every 1 second
+void Tmr6_CallBack_writer(void)
 {
     while (!LCD_IsWritingAllowed());
     
-    LCD_DisplayOn_S1Num();
-    LCD_DisplayOn_S2Num();
-    LCD_DisplayOn_S3Num();
-    LCD_DisplayOn_SupportingChars();
-    IO_RD1_Toggle(); // FYI-looks like the rest of the leds in use-LCD
-    __delay_ms(1000);
-    IO_RD1_Toggle(); 
-    LCD_DisplayOFF_SupportingChars();
-    LCD_DisplayOff_S3Num();
-    LCD_DisplayOff_S2Num();
-    LCD_DisplayOff_S1Num();
+    switch (digitPos)
+    {
+        case 0x00:
+            if (whichNum >= 0x10)
+            {
+                whichNum = 0x00;
+                digitPos = 0x01;
+            }
+                
+            LCD_S1Num (whichNum++);
+            LCD_DisplayOff_S2Num();
+            break;
+            
+        case 0x01:
+            if (whichNum >= 0x10)
+            {
+                whichNum = 0x00;
+                digitPos = 0x00;
+            }
+                
+            LCD_S2Num (whichNum++);
+            LCD_DisplayOff_S1Num();
+            break;
+            
+        default: 
+            LCD_S1Num (whichNum++);
+    }
 }
