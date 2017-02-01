@@ -56,7 +56,6 @@
 */
 
 void (*TMR6_InterruptHandler)(void);
-uint8_t whichNum = 0x00;
 
 void TMR6_Initialize(void)
 {
@@ -78,7 +77,7 @@ void TMR6_Initialize(void)
     PIE3bits.TMR6IE = 1;
 
     // Set Default Interrupt Handler
-    TMR6_SetInterruptHandler(TMR6_DefaultInterruptHandler);
+    TMR6_SetInterruptHandler(Tmr6_CallBack_writer);
 
     // Start TMR6
     TMR6_StartTimer();
@@ -151,14 +150,7 @@ void TMR6_SetInterruptHandler(void* InterruptHandler)
 
 void TMR6_DefaultInterruptHandler(void)
 {
-    while (!LCD_IsWritingAllowed());
-    if (whichNum >= 9)
-    {
-        LCD_S1Num (whichNum);
-        whichNum = 0;
-    }
-    else
-        LCD_S1Num (whichNum++);
+
 }
 
 /**
